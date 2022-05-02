@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project_guide">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Project_guide">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.topicItem.TopMenu"
+            android:exported="true"
+            android:label="project_topics"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".ui.topicItem.TopMenu2"
+            android:exported="true"
+            android:label="project_topics"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".ui.topicItem.TopicActivity"
+            android:exported="true"
+            android:label="project_topic"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_prof"
+            android:icon="@drawable/ic_person"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_note"
+            android:icon="@drawable/ic_note"
+            android:title="Notes" />
+        <item
+            android:id="@+id/nav_formula"
+            android:icon="@drawable/ic_formula"
+            android:title="Formulas" />
+        <item
+            android:id="@+id/nav_exc"
+            android:icon="@drawable/ic_exc"
+            android:title="Exercises" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Gallery" />
+    </group>
+</menu>
