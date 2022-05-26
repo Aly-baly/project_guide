@@ -20,12 +20,13 @@
             android:id="@+id/nav_formula"
             android:icon="@drawable/ic_formula"
             android:title="Formulas" />
-        <item
-            android:id="@+id/nav_exc"
-            android:icon="@drawable/ic_exc"
-            android:title="Exercises" />
+<!--        <item-->
+<!--            android:id="@+id/nav_exc"-->
+<!--            android:icon="@drawable/ic_exc"-->
+<!--            android:title="Exercises" />-->
         <item
             android:id="@+id/nav_gallery"
-            android:title="Gallery" />
+            android:icon="@drawable/ic_favorite"
+            android:title="Memorize" />
     </group>
 </menu>

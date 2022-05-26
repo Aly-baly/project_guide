@@ -17,15 +17,18 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-thin"
+
             android:text="Dynamics of Point Particle"
             android:textColor="#FFFFFF"
-
-            android:textSize="20sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="1. Newton’s Laws of Motion"
             android:textColor="@color/white"
@@ -34,7 +37,7 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="141dp"
             android:layout_marginTop="12dp"
             android:text="Newton’s first law is formulated as follows: a body at rest remains at rest, and a body in motion remains in uniform motion in a straight line unless acted on by an external unbalanced force. Both states are characterized by the acceleration equal to zero. Therefore, the first law can also be formulated as follows: the velocity of a body remains constant (in particular, zero) until the action of other bodies causes it to change. So"
@@ -44,13 +47,16 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="a = 0, if F = 0"
             android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:textSize="20dp"
             android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="59dp"
             android:layout_marginTop="16dp"
             android:text="Newton’s second law is formulated as follows: the rate of change of the momentum of a body is equal to the force F acting on the body:"
@@ -60,13 +66,16 @@
             android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="monospace"
             android:text="dP/dt = F"
             android:textColor="@color/white"
+            android:textSize="20dp"
             android:textStyle="italic" />
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="360sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="This equation is called the equation of motion of a body. Substituting mv for P and taking into account that in Newtonian mechanics the mass is assumed constant, we have"
@@ -77,11 +86,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="F=ma"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:layout_gravity="center_horizontal"
+            />
 
         <TextView
             android:id="@+id/textView20"
-            android:layout_width="360sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Newton’s third law is formulated as follows: the forces exerted by interacting bodies on each other are equal in magnitude and opposite in direction, i.e.,"
@@ -89,10 +103,14 @@
 
         <TextView
             android:id="@+id/textView22"
-            android:layout_width="91dp"
+            android:layout_width="133dp"
             android:layout_height="21dp"
-            android:text="F12 = -F21 ."
-            android:textColor="@color/white" />
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="monospace"
+            android:text="F12 = -F21"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

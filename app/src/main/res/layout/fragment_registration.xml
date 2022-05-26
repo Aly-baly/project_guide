@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/back"
+    android:paddingTop="10dp"
+    tools:context=".ui.database.RegistrationPage">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:gravity="center"
+            android:text="Registration"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emailReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register"
+            android:layout_margin="10dp"
+            android:background="#30ffffff"
+            android:drawablePadding="20dp"
+            android:hint="Enter your email"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <EditText
+            android:id="@+id/pasReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailReg"
+            android:layout_margin="10dp"
+            android:background="#30ffffff"
+            android:drawablePadding="20dp"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/regBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pasReg"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/grey"
+            android:text="Login"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/toLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/regBtn"
+            android:layout_centerHorizontal="true"
+            android:text="Already have account? Click here!"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

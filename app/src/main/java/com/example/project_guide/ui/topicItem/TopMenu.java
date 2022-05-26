@@ -23,7 +23,7 @@ public class TopMenu extends AppCompatActivity{
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()){
-            case R.id.list:
+            case R.id.subTopic1:
                 intent = new Intent(this, TopicActivity.class);
                 break;
             default:

@@ -5,11 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+//import com.example.project_guide.ui.profile.MainProfile;
+//import com.example.project_guide.ui.profile.RegisterFragment;
+import com.example.project_guide.databinding.ActivityMainBinding;
+import com.example.project_guide.ui.database.MainActivity2;
 import com.example.project_guide.ui.topicItem.TopMenu;
 import com.example.project_guide.ui.topicItem.TopMenu2;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -17,9 +24,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.project_guide.databinding.ActivityMainBinding;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -38,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_prof
-//                R.id.nav_exc, R.id.nav_formula, R.id.nav_note
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_formula, R.id.nav_note,
+                R.id.nav_prof
         )
                 .setOpenableLayout(drawer)
                 .build();
@@ -49,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button button1 = (Button) findViewById(R.id.mechanics);
         Button button2 = (Button) findViewById(R.id.kinematics);
-
 
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -67,12 +72,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -84,22 +87,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//    }
-//    public void onClick(View view) {
-//        Intent intent;
-//        switch (view.getId()){
-//            case R.id.mechanics:
-//                intent = new Intent(this, TopMenu.class);
-//                break;
-//            default:
-//                throw new IllegalStateException("Unexpected value: " + view.getId());
-//        }
-//        startActivity(intent);
-//
-//        Intent intent = new Intent(MainActivity.this,TopMenu.class);
-//        startActivity(intent);
 }

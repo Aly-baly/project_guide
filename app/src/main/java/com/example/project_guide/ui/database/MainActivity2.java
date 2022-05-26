@@ -1,32 +1,21 @@
-package com.example.project_guide.ui.profile;
+package com.example.project_guide.ui.database;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.project_guide.MainActivity;
 import com.example.project_guide.R;
-import com.example.project_guide.databinding.FragmentProfileBinding;
-import com.example.project_guide.ui.database.MainActivity2;
-import com.example.project_guide.ui.database.RegistrationPage;
-import com.example.project_guide.ui.topicItem.TopicActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,9 +24,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class ProfileFragment extends Fragment {
-
-    private FragmentProfileBinding binding;
+public class MainActivity2 extends AppCompatActivity {
 
     private final static String TAG = "Login Activity";
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -50,45 +37,11 @@ public class ProfileFragment extends Fragment {
 
     FirebaseUser user;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        ProfileViewModel profileViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
-
-        binding = FragmentProfileBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        mAuth = FirebaseAuth.getInstance();
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_profile);
-        //  buttons = findViewById(R.id.buttons);
-        LoginEmail = root.findViewById(R.id.recyclerView);
-        LoginPassword = root.findViewById(R.id.pasLog);
-        registerHere = root.findViewById(R.id.toReg);
-        loginBtn = root.findViewById(R.id.loginBtn);
-        user = mAuth.getCurrentUser();
-        loginBtn.setOnClickListener(view -> {
-            loginUser();
-        });
-        registerHere.setOnClickListener(view -> {
-            startActivity(new Intent(getActivity(), RegistrationPage.class));
-        });
-
-
-//        final TextView textView = binding.signIn;
-//        profileViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
-
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-
+    /**
+     * AlertDialog
+     */
     public void showAlertDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
                 .setTitle("Error")
                 .setMessage("Incorrect login or password")
@@ -101,7 +54,7 @@ public class ProfileFragment extends Fragment {
     }
 
     public void VerifiedDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
                 .setTitle("Error")
                 .setMessage("Confirm the account")
@@ -112,7 +65,7 @@ public class ProfileFragment extends Fragment {
                         user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(getActivity(), "Verification email has been sent ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity2.this, "Verification email has been sent ", Toast.LENGTH_LONG).show();
 
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -130,26 +83,46 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
+    protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
     }
 
     @Override
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart");
     }
 
     @Override
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop");
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_profile);
+        //  buttons = findViewById(R.id.buttons);
+        LoginEmail = (EditText) findViewById(R.id.emailLog);
+        LoginPassword = (EditText) findViewById(R.id.pasLog);
+        registerHere = (TextView) findViewById(R.id.toReg);
+        loginBtn = (Button) findViewById(R.id.loginBtn);
+        user = mAuth.getCurrentUser();
+        loginBtn.setOnClickListener(view -> {
+            loginUser();
+        });
+        registerHere.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity2.this, RegistrationPage.class));
+        });
+
+    }
+
     private void loginUser() {
-        String email = LoginEmail.getText().toString();
-        String password = LoginPassword.getText().toString();
+        String email = LoginEmail.getText().toString().trim();
+        String password = LoginPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             LoginEmail.setError("Email cannot be empty");
@@ -165,13 +138,13 @@ public class ProfileFragment extends Fragment {
                         if (!user.isEmailVerified()) {
                             VerifiedDialog();
                         } else {
-                            startActivity(new Intent(getActivity(), MainActivity.class));
-                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(MainActivity2.this, MainActivity.class));
+                            Toast.makeText(MainActivity2.this, "Login Successful", Toast.LENGTH_LONG).show();
                         }
 
                     } else {
                         showAlertDialog();
-                        Toast.makeText(getActivity(), "Login Error " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity2.this, "Login Error " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
                     }
                 }

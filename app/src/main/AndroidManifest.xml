@@ -16,7 +16,6 @@
             android:theme="@style/Theme.Project_guide.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,6 +35,30 @@
 
         <activity
             android:name=".ui.topicItem.TopicActivity"
+            android:exported="true"
+            android:label="project_topic"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+        </activity>
+<!--        <activity-->
+<!--            android:name=".ui.profile.MainProfile"-->
+<!--            android:exported="true"-->
+<!--            android:label="project_topics"-->
+<!--            android:theme="@style/Theme.Project_guide.NoActionBar">-->
+<!--        </activity>-->
+<!--        <activity-->
+<!--            android:name=".ui.profile.RegistrationPage"-->
+<!--            android:exported="true"-->
+<!--            android:label="project_topics"-->
+<!--            android:theme="@style/Theme.Project_guide.NoActionBar">-->
+<!--        </activity>-->
+        <activity
+            android:name=".ui.database.RegistrationPage"
+            android:exported="true"
+            android:label="project_topic"
+            android:theme="@style/Theme.Project_guide.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.database.MainActivity2"
             android:exported="true"
             android:label="project_topic"
             android:theme="@style/Theme.Project_guide.NoActionBar">

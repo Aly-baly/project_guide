@@ -11,18 +11,22 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
+
+<!-- Здесь поменяла ProfileFragment -> Personal account-->
     <activity
         android:id="@+id/nav_prof1"
-        android:name="com.example.project_guide.ui.profile.ProfileFragment"
+        android:name="com.example.project_guide.ui.profile.PersonalAccount"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_profile"
+        tools:layout="@layout/fragment_personal_account"
         />
 
     <fragment
         android:id="@+id/nav_prof"
-        android:name="com.example.project_guide.ui.profile.ProfileFragment"
+        android:name="com.example.project_guide.ui.profile.PersonalAccount"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_personal_account" />
+<!-- //////////////////////////////////////////////////////////////// -->
+
 
     <fragment
         android:id="@+id/nav_note"
@@ -35,6 +39,18 @@
         android:name="com.example.project_guide.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_formula"
+        android:name="com.example.project_guide.ui.formula.FormulaFragment"
+        android:label="Formula"
+        tools:layout="@layout/fragment_formula" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_personal_account"-->
+<!--        android:name="com.example.project_guide.ui.profile.PersonalAccount"-->
+<!--        android:label="Formula"-->
+<!--        tools:layout="@layout/fragment_personal_account" />-->
 
     <fragment
         android:id="@+id/nav_slideshow"

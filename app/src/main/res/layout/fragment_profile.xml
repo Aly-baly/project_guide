@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:paddingTop="10dp"
-    tools:context=".ui.profile.ProfileFragment"
+    tools:context=".ui.database.MainActivity2"
     >
     <TextView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
+        android:id="@+id/emailLog"
         android:layout_below="@+id/signIn"
         android:background="#30ffffff"
         android:hint="Enter your name"
@@ -38,8 +38,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@+id/username"
+        android:id="@+id/pasLog"
+        android:layout_below="@+id/emailLog"
         android:background="#30ffffff"
         android:hint="Enter your password"
         android:textColorHint="@color/white"
@@ -54,7 +54,7 @@
         android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/pasLog"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -66,7 +66,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forgotPass"
+        android:id="@+id/toReg"
         android:layout_below="@+id/loginBtn"
         android:text="Don't have account? Click here!"
         android:textColor="@color/white"

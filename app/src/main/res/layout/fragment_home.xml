@@ -205,7 +205,6 @@
                 android:textSize="17dp"
                 tools:ignore="MissingConstraints" />
 
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
